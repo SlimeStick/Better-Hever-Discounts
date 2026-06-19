@@ -55,6 +55,12 @@ The script uses image recognition and mouse & keyboard control to:
 4. Fill in payment information
 5. Submit repeated loads automatically
 
+## Legality
+
+Hever's EULA acknowledes this loading feature, so it seems fair to use it.
+This script just automates the process of manually filling out information.
+The Hever EULA doesn't mention automation and the site doesn't use CAPTCHA meaning it isn't trying to deter bots. 
+
 ## License
 
 This project is licensed under the **GPL-3.0 License**.
