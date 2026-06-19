@@ -173,6 +173,10 @@ def build_parser():
 def main():
     args = build_parser().parse_args()
 
+    if args.load_count > HEVER_MAXIMUM_DAILY_LOAD_COUNT:
+        raise ValueError(f"The load count ({args.load_count}) cannot be greater than "
+                         f"the maximum daily load count {HEVER_MAXIMUM_DAILY_LOAD_COUNT}")
+
     load_option = calculate_ideal_load_option(float(args.current_discount_percentage))
     print(f"Going to load the {args.card_type} card with value {load_option.load_value} "
           f"for {args.load_count} times with a discount of {load_option.discount}")
