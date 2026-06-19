@@ -8,6 +8,8 @@ Hever offers higher discount percentages when smaller amounts are loaded. Instea
 
 Using it during regular months may increase your discount by up to **5% additional discount** (if before you were loading at 28% and now you load at 33%)
 
+Unlike other Hever API repos, this script is very short making it easy to confirm there is no fraudulent activity. Additionally, it only uses pyautogui and is not based on reading the site's code making it more legitimate from a legal standpoint.
+
 ## Features
 
 - Supports both Hever card types
