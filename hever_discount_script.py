@@ -1,4 +1,5 @@
 import argparse
+import webbrowser
 from dataclasses import dataclass
 from time import sleep
 
@@ -96,11 +97,7 @@ def card_type_to_image_above_amount_to_load(card_type: str) -> str:
 
 def log_into_hever():
     # go to the hever site
-    pyautogui.hotkey('ctrl', 'l')
-    pyautogui.typewrite("https://www.hvr.co.il/")
-    # disable auto-complete to not enter a wrong site
-    pyautogui.press("backspace")
-    pyautogui.press("enter")
+    webbrowser.open("https://www.hvr.co.il/")
     # wait for autofill
     sleep(3)
     # choose the first option
@@ -108,19 +105,6 @@ def log_into_hever():
     pyautogui.press('enter')
     # submit the log-in form
     pyautogui.press('enter')
-
-
-def open_browser():
-    # open the best browser there is
-    pyautogui.press('win')
-    pyautogui.typewrite('brave')
-    pyautogui.press('enter')
-    # wait for the app to open
-    sleep(3)
-    pyautogui.press('tab')
-    pyautogui.press('space')
-    # open new tab incase browser was already open
-    pyautogui.hotkey('ctrl', 't')
 
 
 def hvr_floor_function(value: float):
@@ -182,10 +166,7 @@ def main():
           f"for {args.load_count} times with a discount of {load_option.discount}")
 
     for _ in range(args.load_count):
-        open_browser()
-
         log_into_hever()
-
         load_once(args.card_type, load_option.load_value, args.card_number, args.year, args.month, args.cvv)
         # Wait to not spam the website
         sleep(60)
